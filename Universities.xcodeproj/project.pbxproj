@@ -46,6 +46,7 @@
 		8B69E3E72BFBC8AF0019CAA7 /* UniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITests.swift; sourceTree = "<group>"; };
 		8B69E3E92BFBC8AF0019CAA7 /* UniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B69E3F72BFBDE710019CAA7 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
+		8B69E3FA2BFBE9ED0019CAA7 /* StorageLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +127,7 @@
 		8B69E3F62BFBDD4B0019CAA7 /* Mangers */ = {
 			isa = PBXGroup;
 			children = (
+				8B69E3FA2BFBE9ED0019CAA7 /* StorageLayer */,
 				8B69E3F72BFBDE710019CAA7 /* NetworkLayer */,
 			);
 			path = Mangers;
@@ -219,6 +221,8 @@
 				Base,
 			);
 			mainGroup = 8B69E3BA2BFBC8AD0019CAA7;
+			packageReferences = (
+			);
 			productRefGroup = 8B69E3C42BFBC8AD0019CAA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
