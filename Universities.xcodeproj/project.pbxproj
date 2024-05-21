@@ -51,6 +51,7 @@
 		8B69E3E72BFBC8AF0019CAA7 /* UniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITests.swift; sourceTree = "<group>"; };
 		8B69E3E92BFBC8AF0019CAA7 /* UniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B69E3F72BFBDE710019CAA7 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
+		8BF7FE932BFCF3A800465A23 /* UniversityDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversityDetails; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 		8B84EAED2BFC033400021110 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8BF7FE932BFCF3A800465A23 /* UniversityDetails */,
 				8B49127A2BFC7ADB00DE54DD /* UniversitiesList */,
 			);
 			path = Modules;
