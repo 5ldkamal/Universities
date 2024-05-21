@@ -8,6 +8,7 @@ Universities is an iOS application enabling users to explore universities worldw
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tests]
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -36,6 +37,12 @@ To use the app, simply launch it on your iOS device. You can then:
 - Search for universities by country.
 - Browse universities grouped by country.
 - View detailed information about each university.
+
+## Running Unit Tests
+To run the unit tests for the Universities module, follow these steps:
+1. Open `Universities.xcodeproj` in Xcode.
+2. Navigate to the `UniversitiesListInteractorTests.swift` file located in the `Tests` directory.
+3. Open the file to view the test cases.
 
 ## Contributing
 If you'd like to contribute to Universities, please follow these guidelines:
