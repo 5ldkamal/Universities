@@ -17,6 +17,7 @@ let package = Package(
         .package(path: ".././Mangers/StorageDBLayer"),
         .package(path: ".././Mangers/DomainLayer"),
         .package(path: ".././Mangers/LoaderView"),
+        .package(path: "../UniversityDetails")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -27,7 +28,8 @@ let package = Package(
                 "NetworkLayer",
                 "StorageDBLayer",
                 "DomainLayer",
-                "LoaderView"
+                "LoaderView",
+                "UniversityDetails"
             ]
         ),
         .testTarget(

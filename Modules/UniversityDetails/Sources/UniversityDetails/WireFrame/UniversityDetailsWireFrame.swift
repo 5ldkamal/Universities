@@ -3,20 +3,30 @@
 // Copyright (c) 2024 VIPER. All rights reserved.
 //
 
-import Foundation
+import DomainLayer
+import UIKit
 
 public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtocol {
-    public static func createModule() -> UniversityDetailsViewProtocol? {
-        // Generating module components
-        let view: UniversityDetailsViewProtocol = UniversityDetailsView()
-        let presenter = UniversityDetailsPresenter()
-        let wireFrame: UniversityDetailsWireFrameProtocol = UniversityDetailsWireFrame()
+    private weak var viewController: UIViewController?
 
+    public static func createModule(university: UniversityItemModel, delegate: UniversityDetailsDelegate?) -> UniversityDetailsViewProtocol? {
+        // Generating module components
+        let view = UniversityDetailsView(nibName: "UniversityDetailsView", bundle: .module)
+        let presenter = UniversityDetailsPresenter(university: university, delegate: delegate)
+
+        let wireFrame = UniversityDetailsWireFrame()
+        wireFrame.viewController = view
         // Connecting
         view.presenter = presenter
         presenter.view = view
         presenter.wireFrame = wireFrame
 
         return view
+    }
+
+    public func pop(animated: Bool) {
+        DispatchQueue.main.async {
+            self.viewController?.navigationController?.popViewController(animated: animated)
+        }
     }
 }

@@ -61,3 +61,21 @@ extension UniversitiesListInteractor {
         return universities[index]
     }
 }
+
+extension UniversitiesListInteractor {
+    func refreshUniversities(country: String) {
+        universities = []
+        
+        localDatamanager?.clearUniversities(country: country, completion: { result in
+            switch result {
+            case .success:
+                
+                self.presenter?.didSuccessUniversities(items: [])
+                
+                self.fetchUniversities(country: country)
+            case .failure(let failure):
+                self.presenter?.didFailedUniversities(error: failure)
+            }
+        })
+    }
+}

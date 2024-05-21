@@ -13,12 +13,14 @@ extension UniversitiesListPresenter {
     func fetchUniversities(country: String = "United Arab Emirates") {
         self.view?.startLoading()
         
+        self.searchCountry = country
+        
         self.interactor?.fetchUniversities(country: country)
     }
     
     func didSuccessUniversities(items: [UniversityItemModel]) {
         self.view?.stopLoading()
-        
+
         self.universitiesViewModels = items.map { .init(universityItemModel: $0) }
         
         self.view?.reloadData()

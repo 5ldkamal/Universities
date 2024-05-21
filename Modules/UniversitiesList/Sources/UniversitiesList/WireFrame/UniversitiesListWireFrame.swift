@@ -3,10 +3,15 @@
 // Copyright (c) 2024 VIPER. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import UniversityDetails
+import DomainLayer
 
 public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
 {
+    
+    private var viewController: UIViewController?
+    
     public static func createModule() -> UniversitiesListViewProtocol
     {
         // Generating module components
@@ -14,8 +19,10 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
         let presenter = UniversitiesListPresenter()
         let interactor = UniversitiesListInteractor()
         let APIDataManager = UniversitiesAPIDataManager()
+        
         let localDataManager = UniversitiesListLocalDataManager()
         let wireFrame = UniversitiesListWireFrame()
+        wireFrame.viewController = view
 
         // Connecting
         view.presenter = presenter
@@ -27,5 +34,16 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
         interactor.localDatamanager = localDataManager
 
         return view
+    }
+    
+    public func openUniversityDetails(university: UniversityItemModel,
+                               delegate: UniversityDetailsDelegate?){
+        
+        guard let details = UniversityDetailsWireFrame.createModule(university: university, delegate: delegate) as? UIViewController else{
+            print("View Not Found")
+            return
+        }
+        self.viewController?.navigationController?.pushViewController(details,
+                                                                      animated: true)
     }
 }

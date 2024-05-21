@@ -5,26 +5,27 @@
 
 import DomainLayer
 import Foundation
-
-
-
+import UniversityDetails
 
 public protocol UniversitiesListViewProtocol: AnyObject
 {
     var presenter: UniversitiesListPresenterProtocol? { get set }
-    
+
     func startLoading()
-    
+
     func stopLoading()
-    
+
     func showError(error: Error)
-    
+
     func reloadData()
 }
 
 public protocol UniversitiesListWireFrameProtocol: AnyObject
 {
-    static func  createModule() -> UniversitiesListViewProtocol
+    static func createModule() -> UniversitiesListViewProtocol
+
+    func openUniversityDetails(university: UniversityItemModel,
+                               delegate: UniversityDetailsDelegate?)
 }
 
 public protocol UniversitiesListPresenterProtocol: AnyObject
@@ -34,11 +35,11 @@ public protocol UniversitiesListPresenterProtocol: AnyObject
     var wireFrame: UniversitiesListWireFrameProtocol? { get set }
 
     func viewDidLoad()
-    
+
     func numberOfItems() -> Int
-    
+
     func item(at index: IndexPath) -> UniversityItemViewModel?
-    
+
     func didSelectItem(at index: IndexPath)
 }
 
@@ -56,8 +57,10 @@ public protocol UniversitiesListInteractorInputProtocol: AnyObject
     var localDatamanager: UniversitiesListLocalDataManagerInputProtocol? { get set }
 
     func fetchUniversities(country: String)
+
+    func university(at index: Int) -> UniversityItemModel
     
-    func university(at index: Int)-> UniversityItemModel
+    func refreshUniversities(country: String)
 }
 
 public protocol UniversitiesDataManagerInputProtocol: AnyObject
