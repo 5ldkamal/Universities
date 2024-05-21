@@ -8,9 +8,9 @@ Universities is an iOS application enabling users to explore universities worldw
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Swift Packages](#swift package)
+- [Swift Packages](#swift-packages)
 - [Architecture](#architecture)
-- [Tests](#tests)
+- [Running Unit Tests](#running-unit-tests)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -64,7 +64,6 @@ The app follows the VIPER architecture:
 - **RemoteDataManager**: Handles remote data fetching and model objects.
 - **LocalDataManager**: Handles local data storage and retrieval.
 - **Wireframe**: Handles navigation between modules.
-
 
 ## Running Unit Tests
 To run the unit tests for the Universities module, follow these steps:
