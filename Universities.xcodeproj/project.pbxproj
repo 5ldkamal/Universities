@@ -50,8 +50,8 @@
 		8B69E3E32BFBC8AF0019CAA7 /* UniversitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversitiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B69E3E72BFBC8AF0019CAA7 /* UniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITests.swift; sourceTree = "<group>"; };
 		8B69E3E92BFBC8AF0019CAA7 /* UniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8B69E3F72BFBDE710019CAA7 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 		8BF7FE932BFCF3A800465A23 /* UniversityDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversityDetails; sourceTree = "<group>"; };
+		8BF7FE942BFD374500465A23 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +142,10 @@
 		8B69E3F62BFBDD4B0019CAA7 /* Mangers */ = {
 			isa = PBXGroup;
 			children = (
+				8BF7FE942BFD374500465A23 /* NetworkLayer */,
 				8B3E94462BFCBEAC004E2B85 /* LoaderView */,
 				8B49127B2BFC7B9000DE54DD /* DomainLayer */,
 				8B4912792BFC796700DE54DD /* StorageDBLayer */,
-				8B69E3F72BFBDE710019CAA7 /* NetworkLayer */,
 			);
 			path = Mangers;
 			sourceTree = "<group>";
