@@ -30,4 +30,12 @@ extension UniversitiesListPresenter {
         self.view?.stopLoading()
         self.view?.showError(error: error)
     }
+    
+    func didRefreshList() {
+        
+        self.universitiesViewModels.removeAll()
+        
+        self.view?.reloadData()
+        
+    }
 }

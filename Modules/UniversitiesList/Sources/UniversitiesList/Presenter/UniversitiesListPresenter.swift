@@ -41,10 +41,3 @@ extension UniversitiesListPresenter {
     }
 }
 
-extension UniversitiesListPresenter: UniversityDetailsDelegate {
-    func refreshListView() {
-        view?.startLoading()
-
-        interactor?.refreshUniversities(country: searchCountry)
-    }
-}

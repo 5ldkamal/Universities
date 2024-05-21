@@ -8,6 +8,7 @@
 import DomainLayer
 import Foundation
 
+/// A view model representing the details of a university.
 public struct UniversityDetailsViewModel {
     let universityName: String
     let stateProvince: String?
@@ -15,13 +16,14 @@ public struct UniversityDetailsViewModel {
     let countryCode: String?
     let webPage: String?
 
-    init(universityItemModel:
-        UniversityItemModel)
-    {
-        self.universityName = universityItemModel.name
-        self.stateProvince = universityItemModel.stateProvince
-        self.countryCode = universityItemModel.alphaTwoCode
-        self.countryName = universityItemModel.country
-        self.webPage = universityItemModel.webPages.first
+    /// Initializes a new `UniversityDetailsViewModel` instance using the provided `UniversityItemModel`.
+    ///
+    /// - Parameter universityItemModel: The model containing the university details.
+    init(universityItemModel: UniversityItemModel) {
+        universityName = universityItemModel.name
+        stateProvince = universityItemModel.stateProvince
+        countryCode = universityItemModel.alphaTwoCode
+        countryName = universityItemModel.country
+        webPage = universityItemModel.webPages.first
     }
 }

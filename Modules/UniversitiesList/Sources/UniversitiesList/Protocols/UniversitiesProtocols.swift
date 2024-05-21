@@ -48,6 +48,8 @@ public protocol UniversitiesListInteractorOutputProtocol: AnyObject
     func didSuccessUniversities(items: [UniversityItemModel])
 
     func didFailedUniversities(error: Error)
+    
+    func didRefreshList()
 }
 
 public protocol UniversitiesListInteractorInputProtocol: AnyObject
