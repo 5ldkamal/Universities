@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B3E94462BFCBEAC004E2B85 /* LoaderView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoaderView; sourceTree = "<group>"; };
 		8B4912792BFC796700DE54DD /* StorageDBLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageDBLayer; sourceTree = "<group>"; };
 		8B49127A2BFC7ADB00DE54DD /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
 		8B49127B2BFC7B9000DE54DD /* DomainLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DomainLayer; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		8B69E3F62BFBDD4B0019CAA7 /* Mangers */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E94462BFCBEAC004E2B85 /* LoaderView */,
 				8B49127B2BFC7B9000DE54DD /* DomainLayer */,
 				8B4912792BFC796700DE54DD /* StorageDBLayer */,
 				8B69E3F72BFBDE710019CAA7 /* NetworkLayer */,

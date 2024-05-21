@@ -11,7 +11,7 @@ import DomainLayer
 
 /// Realm object representing a university item.
 @objc(UniversityListItem)
-class UniversityItemRealm: Object {
+public class UniversityItemRealm: Object {
     /// Primary key for the object.
     @Persisted(primaryKey: true) var id: ObjectId
     /// The alpha two code of the country.

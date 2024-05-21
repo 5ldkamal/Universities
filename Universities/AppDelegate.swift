@@ -16,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setupWindow()
-        window?.rootViewController = UniversitiesListView()
+        if let view = UniversitiesListWireFrame.createModule() as? UIViewController {
+            window?.rootViewController = view
+        }
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -26,7 +29,7 @@ private extension AppDelegate {
     func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
+
     }
     
 }

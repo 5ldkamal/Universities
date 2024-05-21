@@ -16,15 +16,20 @@ let package = Package(
         .package(path: ".././Mangers/NetworkLayer"),
         .package(path: ".././Mangers/StorageDBLayer"),
         .package(path: ".././Mangers/DomainLayer"),
+        .package(path: ".././Mangers/LoaderView"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "UniversitiesList" ,
-            dependencies: ["NetworkLayer",
-                           "StorageDBLayer",
-                           "DomainLayer"]),
+            dependencies: [
+                "NetworkLayer",
+                "StorageDBLayer",
+                "DomainLayer",
+                "LoaderView"
+            ]
+        ),
         .testTarget(
             name: "UniversitiesListTests",
             dependencies: ["UniversitiesList"]),

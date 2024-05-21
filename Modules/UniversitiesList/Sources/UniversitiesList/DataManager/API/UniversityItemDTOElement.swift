@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - UniversityItemDTOElement
 
-struct UniversityItemDTOElement: Codable {
+public struct UniversityItemDTOElement: Codable {
     let country: String
     let webPages: [String]
     let alphaTwoCode: String

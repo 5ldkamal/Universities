@@ -8,11 +8,19 @@ import UIKit
 
 final public class UniversitiesListView: UIViewController, UniversitiesListViewProtocol
 {
-    var presenter: UniversitiesListPresenterProtocol?
+    /// OUTLETS
+    @IBOutlet var tableView: UITableView?
+    
+    /// Proprietors
+    
+    public var presenter: UniversitiesListPresenterProtocol?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter?.viewDidLoad()
+        
+        setupTableView()
         
     }
 }
