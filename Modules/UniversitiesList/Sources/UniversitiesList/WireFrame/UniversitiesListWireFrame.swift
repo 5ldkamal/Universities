@@ -7,11 +7,14 @@ import UIKit
 import UniversityDetails
 import DomainLayer
 
+/// Wireframe responsible for creating and presenting modules related to universities list.
 public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
 {
-    
     private var viewController: UIViewController?
     
+    /// Creates and configures the module for displaying the list of universities.
+    ///
+    /// - Returns: The view controller conforming to `UniversitiesListViewProtocol`.
     public static func createModule() -> UniversitiesListViewProtocol
     {
         // Generating module components
@@ -19,12 +22,11 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
         let presenter = UniversitiesListPresenter()
         let interactor = UniversitiesListInteractor()
         let APIDataManager = UniversitiesAPIDataManager()
-        
         let localDataManager = UniversitiesListLocalDataManager()
         let wireFrame = UniversitiesListWireFrame()
+        
+        // Setting up dependencies
         wireFrame.viewController = view
-
-        // Connecting
         view.presenter = presenter
         presenter.view = view
         presenter.wireFrame = wireFrame
@@ -36,13 +38,18 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
         return view
     }
     
+    /// Navigates to the university details module.
+    ///
+    /// - Parameters:
+    ///   - university: The university item model to be displayed.
+    ///   - delegate: The delegate for handling actions in the university details module.
     public func openUniversityDetails(university: UniversityItemModel,
                                delegate: UniversityDetailsDelegate?){
-        
         guard let details = UniversityDetailsWireFrame.createModule(university: university, delegate: delegate) as? UIViewController else{
             print("View Not Found")
             return
         }
+        // Push the university details view controller onto the navigation stack
         self.viewController?.navigationController?.pushViewController(details,
                                                                       animated: true)
     }

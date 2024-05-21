@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  UniversityItemModel.swift
+//
 //
 //  Created by Khaled Kamal on 21/05/2024.
 //
@@ -9,7 +9,11 @@ import Foundation
 
 import DomainLayer
 
+/// Extension to initialize a `UniversityItemModel` from a `UniversityItemDTOElement`.
 extension UniversityItemModel {
+    /// Initializes a `UniversityItemModel` instance from a `UniversityItemDTOElement`.
+    ///
+    /// - Parameter universityListItem: The `UniversityItemDTOElement` from which to create the model.
     init(universityListItem: UniversityItemDTOElement) {
         self.init()
         name = universityListItem.name
@@ -21,7 +25,11 @@ extension UniversityItemModel {
     }
 }
 
+/// Extension to initialize a `UniversityItemModel` from a `UniversityItemRealm`.
 extension UniversityItemModel {
+    /// Initializes a `UniversityItemModel` instance from a `UniversityItemRealm`.
+    ///
+    /// - Parameter universityListItem: The `UniversityItemRealm` from which to create the model.
     init(universityListItem: UniversityItemRealm) {
         self.init()
         name = universityListItem.name
@@ -32,4 +40,3 @@ extension UniversityItemModel {
         stateProvince = universityListItem.stateProvince
     }
 }
-

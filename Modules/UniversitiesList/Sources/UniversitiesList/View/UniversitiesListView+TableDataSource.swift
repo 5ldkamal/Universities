@@ -7,13 +7,17 @@
 
 import UIKit
 
+// MARK: - Setup TableView
+
 extension UniversitiesListView {
+    /// Sets up the table view data source, delegate, and registers the custom cell.
     func setupTableView() {
         tableView?.dataSource = self
         tableView?.delegate = self
         registerUniversityTableViewCell()
     }
 
+    /// Registers the custom table view cell.
     private func registerUniversityTableViewCell() {
         let reuseIdentifier = UniversityTableViewCell.reuseIdentifier
         tableView?.register(
@@ -22,6 +26,8 @@ extension UniversitiesListView {
         )
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension UniversitiesListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,15 +41,19 @@ extension UniversitiesListView: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
-        
+
+        // Configure cell with the item
         cell.config(with: item)
-        
+
         return cell
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension UniversitiesListView: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Notify presenter that a row is selected
         presenter?.didSelectItem(at: indexPath)
     }
 }

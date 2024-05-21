@@ -1,13 +1,13 @@
 //
-//  File.swift
-//  
+//  UniversityItemRealm.swift
+//
 //
 //  Created by Khaled Kamal on 21/05/2024.
 //
 
+import DomainLayer
 import Foundation
 import RealmSwift
-import DomainLayer
 
 /// Realm object representing a university item.
 @objc(UniversityListItem)
@@ -37,11 +37,11 @@ extension UniversityItemRealm {
         alphaTwoCode = universityItemModel.alphaTwoCode
         country = universityItemModel.country
         stateProvince = universityItemModel.stateProvince
-        universityItemModel.domains.forEach {
-            domains.append($0)
-        }
         universityItemModel.webPages.forEach {
             webPages.append($0)
+        }
+        universityItemModel.domains.forEach {
+            domains.append($0)
         }
     }
 }
