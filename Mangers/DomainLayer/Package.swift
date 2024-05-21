@@ -4,27 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "StorageLayer",
+    name: "DomainLayer",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "StorageLayer",
-            targets: ["StorageLayer"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/realm/realm-swift.git",
-                 exact: "10.50.0")
+            name: "DomainLayer",
+            targets: ["DomainLayer"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "StorageLayer",
-            dependencies: ["RealmSwift"]
-        ),
+            name: "DomainLayer"),
         .testTarget(
-            name: "StorageLayerTests",
-            dependencies: ["StorageLayer"]
-        ),
+            name: "DomainLayerTests",
+            dependencies: ["DomainLayer"]),
     ]
 )

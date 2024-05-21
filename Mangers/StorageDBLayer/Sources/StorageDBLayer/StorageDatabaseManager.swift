@@ -1,12 +1,13 @@
 //
 //  StorageDatabaseManager.swift
-//  UAEUniversities
+//  
 //
-//  Created by Khalid on 03/05/2024.
+//  Created by Khaled Kamal on 20/05/2024.
 //
 
 import Foundation
 import RealmSwift
+import Realm
 
 /// Manager responsible for storage database operations.
 public final class StorageDatabaseManager: NSObject, StorageDatabase {
@@ -67,7 +68,7 @@ extension StorageDatabaseManager {
         completion: StorageCompletionHandler,
         block: @escaping ((Realm, Object) -> Void)
     ) {
-        writeAsync(object) { [weak self] result in
+        writeAsync(passedObject: object) { [weak self] result in
             switch result {
             case let .success((realm, resolveObject)):
 
@@ -94,7 +95,7 @@ extension StorageDatabaseManager {
         completion: StorageCompletionHandler,
         block: @escaping ((Realm, [Object]) -> Void)
     ) {
-        writeAsync(objects) { [weak self] result in
+        writeAsync(passedObjects: objects) { [weak self] result in
             switch result {
             case let .success((realm, resolveObjects)):
                 if let resolveObjects = resolveObjects {
@@ -104,7 +105,7 @@ extension StorageDatabaseManager {
                 self?.completionHandler(result: .success(resolveObjects != nil),
                                         completion: completion)
 
-            case .failure:
+            case .failure(let error):
                 self?.completionHandler(result: .failure(error),
                                         completion: completion)
             }
@@ -123,7 +124,7 @@ extension StorageDatabaseManager {
     ///   - passedObjects: The array of thread-confined objects to write.
     ///   - completion: A completion handler that will be called with the result of the write operation.
     /// - Note: The completion handler is called on the main queue.
-    private func writeAsync<T:Object>(_ passedObjects: [T],
+    private func writeAsync<T:Object>(passedObjects: [T],
                                                completion: @escaping (Result<(Realm, [T]?), Error>) -> Void)
     {
         // Perform the write operation on a background queue
@@ -151,7 +152,7 @@ extension StorageDatabaseManager {
 
      - Note: The completion handler is called on the main queue.
      */
-    private func writeAsync<T: Object>(_ passedObject: T,
+    private func writeAsync<T: Object>(passedObject: T,
                                                completion: @escaping (Result<(Realm, T?), Error>) -> Void)
     {
 

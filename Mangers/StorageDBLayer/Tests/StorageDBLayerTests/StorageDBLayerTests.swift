@@ -1,7 +1,7 @@
 import XCTest
-@testable import StorageLayer
+@testable import StorageDBLayer
 
-final class StorageLayerTests: XCTestCase {
+final class StorageDBLayerTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

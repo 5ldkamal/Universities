@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2885572BFC85AE00415DC9 /* UniversitiesList in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2885562BFC85AE00415DC9 /* UniversitiesList */; };
 		8B69E3C72BFBC8AD0019CAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69E3C62BFBC8AD0019CAA7 /* AppDelegate.swift */; };
 		8B69E3CB2BFBC8AD0019CAA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69E3CA2BFBC8AD0019CAA7 /* ViewController.swift */; };
 		8B69E3D02BFBC8AF0019CAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B69E3CF2BFBC8AF0019CAA7 /* Assets.xcassets */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B4912792BFC796700DE54DD /* StorageDBLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageDBLayer; sourceTree = "<group>"; };
+		8B49127A2BFC7ADB00DE54DD /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
+		8B49127B2BFC7B9000DE54DD /* DomainLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DomainLayer; sourceTree = "<group>"; };
 		8B69E3C32BFBC8AD0019CAA7 /* Universities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Universities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B69E3C62BFBC8AD0019CAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B69E3CA2BFBC8AD0019CAA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +50,6 @@
 		8B69E3E72BFBC8AF0019CAA7 /* UniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITests.swift; sourceTree = "<group>"; };
 		8B69E3E92BFBC8AF0019CAA7 /* UniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B69E3F72BFBDE710019CAA7 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
-		8B69E3FA2BFBE9ED0019CAA7 /* StorageLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2885572BFC85AE00415DC9 /* UniversitiesList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,14 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B2885552BFC85AD00415DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B69E3BA2BFBC8AD0019CAA7 = {
 			isa = PBXGroup;
 			children = (
+				8B84EAED2BFC033400021110 /* Modules */,
 				8B69E3F62BFBDD4B0019CAA7 /* Mangers */,
 				8B69E3C52BFBC8AD0019CAA7 /* Universities */,
 				8B69E3DC2BFBC8AF0019CAA7 /* UniversitiesTests */,
 				8B69E3E62BFBC8AF0019CAA7 /* UniversitiesUITests */,
 				8B69E3C42BFBC8AD0019CAA7 /* Products */,
+				8B2885552BFC85AD00415DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,10 +140,19 @@
 		8B69E3F62BFBDD4B0019CAA7 /* Mangers */ = {
 			isa = PBXGroup;
 			children = (
-				8B69E3FA2BFBE9ED0019CAA7 /* StorageLayer */,
+				8B49127B2BFC7B9000DE54DD /* DomainLayer */,
+				8B4912792BFC796700DE54DD /* StorageDBLayer */,
 				8B69E3F72BFBDE710019CAA7 /* NetworkLayer */,
 			);
 			path = Mangers;
+			sourceTree = "<group>";
+		};
+		8B84EAED2BFC033400021110 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B49127A2BFC7ADB00DE54DD /* UniversitiesList */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +171,9 @@
 			dependencies = (
 			);
 			name = Universities;
+			packageProductDependencies = (
+				8B2885562BFC85AE00415DC9 /* UniversitiesList */,
+			);
 			productName = Universities;
 			productReference = 8B69E3C32BFBC8AD0019CAA7 /* Universities.app */;
 			productType = "com.apple.product-type.application";
@@ -445,7 +470,6 @@
 				INFOPLIST_FILE = Universities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +497,6 @@
 				INFOPLIST_FILE = Universities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -605,6 +628,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B2885562BFC85AE00415DC9 /* UniversitiesList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UniversitiesList;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B69E3BB2BFBC8AD0019CAA7 /* Project object */;
 }
