@@ -17,15 +17,15 @@ import UIKit
 /// The `updateView(model:)` method updates the UI labels with the data from the `UniversityDetailsViewModel` model.
 public final class UniversityDetailsView: UIViewController, UniversityDetailsViewProtocol {
     /// OUTLET
-    @IBOutlet var universityNameLabel: UILabel?
+    @IBOutlet private var universityNameLabel: UILabel?
 
-    @IBOutlet var universityStateLabel: UILabel?
+    @IBOutlet private var universityStateLabel: UILabel?
 
-    @IBOutlet var countryNameLabel: UILabel?
+    @IBOutlet private var countryNameLabel: UILabel?
 
-    @IBOutlet var countryCodeLabel: UILabel?
+    @IBOutlet private var countryCodeLabel: UILabel?
 
-    @IBOutlet var webPageLabel: UILabel!
+    @IBOutlet private var webPageLabel: UILabel?
 
     /// Properties
     public var presenter: UniversityDetailsPresenterProtocol?
@@ -65,6 +65,6 @@ public extension UniversityDetailsView {
         universityStateLabel?.text = model.stateProvince
         countryNameLabel?.text = model.countryName
         countryCodeLabel?.text = model.countryCode
-        webPageLabel.text = model.webPage
+        webPageLabel?.text = model.webPage
     }
 }

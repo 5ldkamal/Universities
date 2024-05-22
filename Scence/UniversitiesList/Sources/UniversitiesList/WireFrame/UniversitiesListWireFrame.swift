@@ -10,7 +10,7 @@ import DomainLayer
 /// Wireframe responsible for creating and presenting modules related to universities list.
 public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
 {
-    private var viewController: UIViewController?
+    private weak var viewController: UIViewController?
     
     /// Creates and configures the module for displaying the list of universities.
     ///

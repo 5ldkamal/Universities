@@ -90,8 +90,8 @@
 		8B69E3BA2BFBC8AD0019CAA7 = {
 			isa = PBXGroup;
 			children = (
-				8B84EAED2BFC033400021110 /* Modules */,
-				8B69E3F62BFBDD4B0019CAA7 /* Mangers */,
+				8B84EAED2BFC033400021110 /* Scence */,
+				8B69E3F62BFBDD4B0019CAA7 /* SharedModules */,
 				8B69E3C52BFBC8AD0019CAA7 /* Universities */,
 				8B69E3DC2BFBC8AF0019CAA7 /* UniversitiesTests */,
 				8B69E3E62BFBC8AF0019CAA7 /* UniversitiesUITests */,
@@ -139,7 +139,7 @@
 			path = UniversitiesUITests;
 			sourceTree = "<group>";
 		};
-		8B69E3F62BFBDD4B0019CAA7 /* Mangers */ = {
+		8B69E3F62BFBDD4B0019CAA7 /* SharedModules */ = {
 			isa = PBXGroup;
 			children = (
 				8BF7FE942BFD374500465A23 /* NetworkLayer */,
@@ -147,16 +147,16 @@
 				8B49127B2BFC7B9000DE54DD /* DomainLayer */,
 				8B4912792BFC796700DE54DD /* StorageDBLayer */,
 			);
-			path = Mangers;
+			path = SharedModules;
 			sourceTree = "<group>";
 		};
-		8B84EAED2BFC033400021110 /* Modules */ = {
+		8B84EAED2BFC033400021110 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
 				8BF7FE932BFCF3A800465A23 /* UniversityDetails */,
 				8B49127A2BFC7ADB00DE54DD /* UniversitiesList */,
 			);
-			path = Modules;
+			path = Scence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

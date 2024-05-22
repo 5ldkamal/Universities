@@ -12,7 +12,7 @@ let package = Package(
             targets: ["UniversityDetails"]),
     ],
     dependencies: [
-        .package(path: ".././Mangers/DomainLayer"),
+        .package(path: ".././SharedModules/DomainLayer"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

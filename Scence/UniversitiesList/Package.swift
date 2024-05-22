@@ -13,10 +13,10 @@ let package = Package(
     ],
     
     dependencies: [
-        .package(path: ".././Mangers/NetworkLayer"),
-        .package(path: ".././Mangers/StorageDBLayer"),
-        .package(path: ".././Mangers/DomainLayer"),
-        .package(path: ".././Mangers/LoaderView"),
+        .package(path: ".././SharedModules/NetworkLayer"),
+        .package(path: ".././SharedModules/StorageDBLayer"),
+        .package(path: ".././SharedModules/DomainLayer"),
+        .package(path: ".././SharedModules/LoaderView"),
         .package(path: "../UniversityDetails")
     ],
     targets: [

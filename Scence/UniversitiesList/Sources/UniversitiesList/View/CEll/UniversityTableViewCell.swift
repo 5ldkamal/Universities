@@ -10,7 +10,7 @@ import UIKit
 /// Custom table view cell to display university information.
 final class UniversityTableViewCell: UITableViewCell {
     /// Reuse identifier for the cell.
-    static let reuseIdentifier = "UniversityTableViewCell"
+    static let reuseIdentifier = String.init(describing: UniversityTableViewCell.self) //"UniversityTableViewCell"
 
     /// Label to display the university name.
     @IBOutlet var universityNameLabel: UILabel!
