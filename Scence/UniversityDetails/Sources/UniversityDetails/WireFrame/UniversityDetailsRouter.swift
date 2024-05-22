@@ -8,7 +8,7 @@ import UIKit
 
 /// A wireframe class responsible for managing the navigation logic and the creation
 /// of the UniversityDetails module.
-public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtocol {
+public final class UniversityDetailsRouter: UniversityDetailsRouterProtocol {
     /// A weak reference to the view controller to avoid retain cycles.
     private weak var viewController: UIViewController?
 
@@ -19,11 +19,12 @@ public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtoco
     ///   - delegate: An optional delegate that conforms to the `UniversityDetailsDelegate` protocol.
     /// - Returns: An optional view protocol for the UniversityDetails view, which can be nil if the view cannot be created.
     public static func createModule(university: UniversityItemModel, delegate: UniversityDetailsDelegate?) -> UniversityDetailsViewProtocol? {
-        let view = UniversityDetailsView(nibName: "UniversityDetailsView", bundle: .module)
+        let id = String(describing: UniversityDetailsView.self)
+        let view = UniversityDetailsView(nibName: id, bundle: .module)
 
         let presenter = UniversityDetailsPresenter(university: university, delegate: delegate)
 
-        let wireFrame = UniversityDetailsWireFrame()
+        let wireFrame = UniversityDetailsRouter()
         wireFrame.viewController = view
 
         view.presenter = presenter

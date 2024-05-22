@@ -12,7 +12,7 @@ public final class UniversityDetailsPresenter: UniversityDetailsPresenterProtoco
     public weak var view: UniversityDetailsViewProtocol?
 
     /// A reference to the wireframe protocol for navigation logic.
-    public var wireFrame: UniversityDetailsWireFrameProtocol?
+    public var wireFrame: UniversityDetailsRouterProtocol?
 
     /// The university model containing the details to be presented.
     private let university: UniversityItemModel

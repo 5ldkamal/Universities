@@ -18,7 +18,8 @@ public final class UniversitiesListRouter: UniversitiesListRouterProtocol
     public static func createModule() -> UniversitiesListViewProtocol
     {
         // Generating module components
-        let view = UniversitiesListView(nibName: "UniversitiesListView", bundle: .module)
+        let id = String(describing: UniversitiesListView.self)
+        let view = UniversitiesListView(nibName:id , bundle: .module)
         let presenter = UniversitiesListPresenter()
         let interactor = UniversitiesListInteractor()
         let APIDataManager = UniversitiesAPIDataManager()
@@ -45,7 +46,7 @@ public final class UniversitiesListRouter: UniversitiesListRouterProtocol
     ///   - delegate: The delegate for handling actions in the university details module.
     public func openUniversityDetails(university: UniversityItemModel,
                                delegate: UniversityDetailsDelegate?){
-        guard let details = UniversityDetailsWireFrame.createModule(university: university, delegate: delegate) as? UIViewController else{
+        guard let details = UniversityDetailsRouter.createModule(university: university, delegate: delegate) as? UIViewController else{
             print("View Not Found")
             return
         }

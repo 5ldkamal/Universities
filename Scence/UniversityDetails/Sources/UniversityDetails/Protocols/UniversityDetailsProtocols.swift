@@ -17,7 +17,7 @@ public protocol UniversityDetailsViewProtocol: AnyObject {
 }
 
 /// A protocol that defines the wireframe for the university details screen.
-public protocol UniversityDetailsWireFrameProtocol: AnyObject {
+public protocol UniversityDetailsRouterProtocol: AnyObject {
     /// Creates the university details module by initializing and connecting all its components.
     /// - Parameters:
     ///   - university: The university model object containing the details to be displayed.
@@ -37,7 +37,7 @@ public protocol UniversityDetailsPresenterProtocol: AnyObject {
     var view: UniversityDetailsViewProtocol? { get set }
 
     /// The wireframe that handles navigation and presentation.
-    var wireFrame: UniversityDetailsWireFrameProtocol? { get set }
+    var wireFrame: UniversityDetailsRouterProtocol? { get set }
 
     /// Called when the view is loaded.
     func loadData()
