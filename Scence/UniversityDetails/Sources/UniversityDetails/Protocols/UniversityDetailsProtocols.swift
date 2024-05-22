@@ -40,7 +40,7 @@ public protocol UniversityDetailsPresenterProtocol: AnyObject {
     var wireFrame: UniversityDetailsWireFrameProtocol? { get set }
 
     /// Called when the view is loaded.
-    func viewDidLoad()
+    func loadData()
 
     /// Refreshes the view by calling the wireframe to pop the current view controller and firing the delegate to refresh the list view.
     func refresh()

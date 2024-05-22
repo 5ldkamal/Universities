@@ -17,15 +17,16 @@ import UIKit
 /// The `updateView(model:)` method updates the UI labels with the data from the `UniversityDetailsViewModel` model.
 public final class UniversityDetailsView: UIViewController, UniversityDetailsViewProtocol {
     /// OUTLET
-    @IBOutlet private var universityNameLabel: UILabel?
+    /// They should be 'private' if i do not use them in separated files
+    @IBOutlet  var universityNameLabel: UILabel?
 
-    @IBOutlet private var universityStateLabel: UILabel?
+    @IBOutlet  var universityStateLabel: UILabel?
 
-    @IBOutlet private var countryNameLabel: UILabel?
+    @IBOutlet  var countryNameLabel: UILabel?
 
-    @IBOutlet private var countryCodeLabel: UILabel?
+    @IBOutlet  var countryCodeLabel: UILabel?
 
-    @IBOutlet private var webPageLabel: UILabel?
+    @IBOutlet  var webPageLabel: UILabel?
 
     /// Properties
     public var presenter: UniversityDetailsPresenterProtocol?
@@ -34,7 +35,7 @@ public final class UniversityDetailsView: UIViewController, UniversityDetailsVie
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        presenter?.viewDidLoad()
+        presenter?.loadData()
 
         setupNavigationBar()
     }
@@ -54,17 +55,3 @@ public final class UniversityDetailsView: UIViewController, UniversityDetailsVie
     }
 }
 
-public extension UniversityDetailsView {
-    /// Updates the UI labels with the data from the `UniversityDetailsViewModel` model.
-    ///
-    /// - Parameter model: The `UniversityDetailsViewModel` model containing the university details.
-    func updateView(model: UniversityDetailsViewModel) {
-        title = model.universityName
-
-        universityNameLabel?.text = model.universityName
-        universityStateLabel?.text = model.stateProvince
-        countryNameLabel?.text = model.countryName
-        countryCodeLabel?.text = model.countryCode
-        webPageLabel?.text = model.webPage
-    }
-}

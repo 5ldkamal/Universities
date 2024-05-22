@@ -33,7 +33,7 @@ public final class UniversityDetailsPresenter: UniversityDetailsPresenterProtoco
     }
 
     /// Called when the view is loaded. Prepares the view with the university details.
-    public func viewDidLoad() {
+    public func loadData() {
         let mappingModel = UniversityDetailsViewModel(universityItemModel: university)
         view?.updateView(model: mappingModel)
     }
