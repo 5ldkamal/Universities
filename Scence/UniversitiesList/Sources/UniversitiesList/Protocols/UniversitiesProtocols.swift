@@ -27,7 +27,7 @@ public protocol UniversitiesListViewProtocol: AnyObject {
 }
 
 /// Protocol defining the wireframe interface for the Universities List.
-public protocol UniversitiesListWireFrameProtocol: AnyObject {
+public protocol UniversitiesListRouterProtocol: AnyObject {
     /// Creates the module for Universities List.
     ///
     /// - Returns: The view protocol for Universities List.
@@ -46,10 +46,10 @@ public protocol UniversitiesListWireFrameProtocol: AnyObject {
 public protocol UniversitiesListPresenterProtocol: AnyObject {
     var view: UniversitiesListViewProtocol? { get set }
     var interactor: UniversitiesListInteractorInputProtocol? { get set }
-    var wireFrame: UniversitiesListWireFrameProtocol? { get set }
+    var wireFrame: UniversitiesListRouterProtocol? { get set }
 
     /// Called when the view is loaded.
-    func viewDidLoad()
+    func loadData()
 
     /// Returns the number of items in the list.
     ///

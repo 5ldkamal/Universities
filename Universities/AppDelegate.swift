@@ -29,7 +29,7 @@ private extension AppDelegate {
     }
     
     private func setRoot() {
-        if let view = UniversitiesListWireFrame.createModule() as? UIViewController {
+        if let view = UniversitiesListRouter.createModule() as? UIViewController {
             let nav = UINavigationController(rootViewController: view)
             window?.rootViewController = nav
         }

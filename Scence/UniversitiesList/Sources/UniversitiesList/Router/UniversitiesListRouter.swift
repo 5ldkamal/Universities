@@ -8,7 +8,7 @@ import UniversityDetails
 import DomainLayer
 
 /// Wireframe responsible for creating and presenting modules related to universities list.
-public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
+public final class UniversitiesListRouter: UniversitiesListRouterProtocol
 {
     private weak var viewController: UIViewController?
     
@@ -23,7 +23,7 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol
         let interactor = UniversitiesListInteractor()
         let APIDataManager = UniversitiesAPIDataManager()
         let localDataManager = UniversitiesListLocalDataManager()
-        let wireFrame = UniversitiesListWireFrame()
+        let wireFrame = UniversitiesListRouter()
         
         // Setting up dependencies
         wireFrame.viewController = view

@@ -19,9 +19,13 @@ final public class UniversitiesListView: UIViewController, UniversitiesListViewP
         super.viewDidLoad()
         
         // Notify presenter that the view is loaded
-        presenter?.viewDidLoad()
+        presenter?.loadData()
         
         // Setup table view
         setupTableView()
+        
+        ///It must not use free string like this , we should create file collecting free string in every module
+        /// TODO: Move this string into separated file
+        self.title = "Universities"
     }
 }

@@ -24,6 +24,8 @@ public extension UniversitiesListView {
     /// - Parameter error: The error that occurred.
     func showError(error: Error) {
         LoaderView.shared.dismissLoader()
+        
+        //TODO: We should show Error Alert
     }
 
     /// Reloads the table view data.

@@ -10,13 +10,15 @@ import UIKit
 /// Custom table view cell to display university information.
 final class UniversityTableViewCell: UITableViewCell {
     /// Reuse identifier for the cell.
-    static let reuseIdentifier = String.init(describing: UniversityTableViewCell.self) //"UniversityTableViewCell"
+    // You must name your xib identifier same as the class name
+    // TODO: should be implemented using a swift lint rule
+    static let reuseIdentifier = String(describing: UniversityTableViewCell.self)
 
     /// Label to display the university name.
-    @IBOutlet var universityNameLabel: UILabel!
+    @IBOutlet private var universityNameLabel: UILabel!
 
     /// Label to display the state/province of the university.
-    @IBOutlet var universityStateLabel: UILabel!
+    @IBOutlet private var universityStateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
